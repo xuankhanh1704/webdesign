@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../Asm2/css/signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="shortcut icon" href="https://img.lovepik.com/free-png/20220127/lovepik-guitar-png-image_401954205_wh860.png" type="x-icon">
+</head>
+<body>
+    <div class="big">
+        <form action="" id="signup-form">
+            <div class="signupform">
+                <h1 style="color: antiquewhite;padding-left: 55px;padding-top:130px;">Đăng Ký Tài Khoản</h1>
+                <div style="margin-left:50px;margin-top: 30px;" class="tendangnhap">
+                    <input style="width: 270px;height: 30px;padding: 5px 5px;" type="text" name="tendangnhap" id="username" placeholder="Tên đăng nhập">
+                </div>
+                <br>
+                <div style="margin-left:50px;margin-top: 10px;" class="matkhau">
+                    <input style="width: 270px;height: 30px;padding: 5px 5px;" type="text" name="matkhau" id="password"  placeholder="Mật khẩu">
+                </div>
+                <button style="margin-left: 148px;margin-top:30px;width: 100px;height: 30px;border:2px solid gray; border-radius: 20px;" type="submit" id="btn">Đăng Ký</button>
+                <br>
+                <br>
+                <a style="padding-left: 110px;color: azure;" href="./index.html">Có tài khoản ? Đăng nhập</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        const signupForm = document.getElementById("signup-form")
+        const btn = document.getElementById("btn")
+        const users = [];
+function validateForm() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Kiểm tra tên đăng nhập
+    if (username === "") {
+        alert("Tên đăng nhập không được để trống!");
+        return false;
+    }
+
+
+    // Kiểm tra mật khẩu
+    if (password === "") {
+        alert("Mật khẩu không được để trống!");
+        return false;
+    } else if (password.length < 8) {
+        alert("Mật khẩu phải dài ít nhất 8 ký tự!");
+        return false;
+    }
+    const storedUsers = localStorage.getItem("users");
+    const usersArray = JSON.parse(storedUsers);
+
+    const check = usersArray.find(
+            user => user.username === username && user.password === password
+        );
+
+    // Kiểm tra nếu tên đăng nhập đã tồn tại
+    if (check) {
+        alert("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác!");
+        return false;
+    }   
+
+    // Thêm người dùng mới vào mảng
+    users.push({ username, password });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Đăng ký thành công!");
+    console.log("Danh sách người dùng:", users);
+    window.location.href="login.html";
+
+    // Reset form
+    document.getElementById("register-form").reset();
+    return false; // Ngăn chặn hành vi gửi form mặc định
+}
+
+btn.addEventListener("click", validateForm);
+
+    </script>
+</body>
+</html>

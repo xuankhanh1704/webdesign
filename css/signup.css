@@ -1,0 +1,22 @@
+body{
+    background-image: url(https://datsen.com.vn/wp-content/uploads/2021/07/tai-hinh-nen-nha-dep-cho-may-tinh-2-1.jpg);
+    background-size: 100%;
+}
+.big {
+    width: 1900px;
+    height: 1000px;
+    position: relative;
+}
+.big .signupform {
+    width: 400px;
+    height: 600px;
+    border: 2px gray solid;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    top: 100px;
+    left: 560px;
+}
+.big .signupform a:hover{
+    color: aquamarine;
+}

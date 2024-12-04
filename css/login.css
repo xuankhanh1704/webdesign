@@ -1,0 +1,75 @@
+body{
+    background-image: url(https://datsen.com.vn/wp-content/uploads/2021/07/tai-hinh-nen-nha-dep-cho-may-tinh-2-1.jpg);
+    background-size: 100%;
+}
+.big {
+    width: 1900px;
+    height: 1000px;
+    position: relative;
+}
+.big .loginform{
+    width: 400px;
+    height: 600px;
+    border: 2px gray solid;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position:absolute;
+    top: 100px;
+    left: 560px;
+}
+.big .loginform h1{
+    font-weight:bold;
+    padding-left: 100px;
+    color: beige;
+}
+.big .loginform .loginform-number1 {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.big .loginform .user{
+    padding-top: 100px;
+    padding-left: 45px;
+}
+.big .loginform .user input{
+    border: 1px solid gray;
+    height:30px;
+    
+}
+.big .loginform .pass{
+    padding-top: 10px;
+    padding-left: 45px;
+}
+.big .loginform .pass input{
+    border: 1px solid gray;
+    height: 30px;
+}   
+.big .loginform .btnlogin{
+    width: 200px;
+    height: 20px;
+    padding: 30px;
+    padding-left: 100px;
+}
+.big .loginform .btnlogin button{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid gray;
+}
+.big .loginform .btnsignup{
+    width: 200px;
+    height: 20px;
+    padding-left: 100px;
+}
+.big .loginform .btnsignup button{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+
